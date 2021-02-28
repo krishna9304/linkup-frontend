@@ -1,0 +1,17 @@
+.nav {
+  height: 3.5rem;
+  width: 100%;
+  background-color: #0e76a8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 15px rgb(129, 129, 129);
+}
+.profPic {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #fff;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 15px rgb(129, 129, 129);
+}
