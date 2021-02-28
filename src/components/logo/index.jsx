@@ -1,10 +1,12 @@
 import React from "react";
+import "./index.css";
 
 const Logo = () => {
   return (
-    <h1>
-      <font color="#fff">LinkUP</font>
-    </h1>
+    <div className="logo">
+      <span className="link">Link</span>
+      <span className="up">Up</span>
+    </div>
   );
 };
 

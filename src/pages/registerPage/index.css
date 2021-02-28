@@ -2,6 +2,7 @@
   margin: 0;
   width: 100%;
   height: 100vh;
+  background-image: linear-gradient(to right bottom, #0e76a8, #083347);
   background-color: #0e76a8;
   display: flex;
   justify-content: flex-end;

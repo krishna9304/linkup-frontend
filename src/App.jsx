@@ -1,11 +1,18 @@
 import React from "react";
+import Homepage from "./pages/homepage";
 import "./App.css";
-import RegisterPage from "./pages/registerPage";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <RegisterPage />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Homepage />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

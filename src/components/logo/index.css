@@ -1,0 +1,17 @@
+.logo {
+  margin: 2rem;
+}
+.link {
+  color: #fff;
+  font-size: xx-large;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.up {
+  color: black;
+  font-size: xx-large;
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
