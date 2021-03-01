@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="description">A modern way to groww connections</div>
       <div className="newHere">
         New Here?
-        <Link className="signup" to="/register">
+        <Link className="signup" to="/signup">
           Register Now
         </Link>
       </div>

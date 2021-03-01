@@ -7,7 +7,7 @@ const Feed = () => {
   return (
     <div>
       <NavBar />
-      <div className="container">
+      <div className="card-container">
         <Card />
       </div>
     </div>

@@ -2,6 +2,8 @@
   height: 100vh;
   width: 100%;
   background-color: rgba(212, 212, 212, 0.192);
+  position: fixed;
+  overflow: hidden;
 }
 .nav {
   height: 3.5rem;
@@ -61,4 +63,18 @@
 }
 .newHere {
   margin-top: 50vh;
+}
+
+@media only screen and (max-width: 413px) {
+  .hero .mainText {
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .homepage {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+  }
 }

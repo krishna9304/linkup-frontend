@@ -3,6 +3,7 @@ import Homepage from "./pages/homepage";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Feed from "./pages/feed";
+import AuthPage from "./pages/authPage";
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
             <Homepage />
           </Route>
           <Route path="/login" exact>
-            <Feed />
+            <AuthPage auth />
+          </Route>
+          <Route path="/signup" exact>
+            <AuthPage />
           </Route>
         </Switch>
       </BrowserRouter>
