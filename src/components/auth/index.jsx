@@ -21,7 +21,8 @@ const Auth = ({ auth }) => {
               </a>
             </div>
             <span className="simText">or use your email for registration</span>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <button>Sign Up</button>

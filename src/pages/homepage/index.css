@@ -37,12 +37,12 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 .mainText {
-  font-size: xxx-large;
-  font-weight: 200;
+  font-size: 4rem;
+  font-weight: 400;
 }
 .hero .heroLogo {
   font-weight: bolder;
@@ -62,7 +62,8 @@
   color: #000;
 }
 .newHere {
-  margin-top: 50vh;
+  margin-top: 40vh;
+  margin-bottom: 5vh;
 }
 
 @media only screen and (max-width: 413px) {
