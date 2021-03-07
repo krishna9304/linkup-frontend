@@ -1,48 +1,81 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
+import axios from "axios";
+import { AuthContext } from "../../App";
+import { useHistory } from "react-router";
 
 const Auth = ({ auth }) => {
   let [active, setActive] = useState(auth ? "" : "right-panel-active");
+  let [authData, setAuthData] = useState({});
+  let { authCon, setAuthCon } = useContext(AuthContext);
+  let history = useHistory();
+
   return (
     <div className="registerPage">
       <div className={`container ${active}`} id="container">
         <div className="form-container sign-up-container">
-          <form action="#">
+          <form>
             <h1>Create Account</h1>
-            <div className="social-container">
-              <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-            <span className="simText">or use your email for registration</span>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <br />
+            <input
+              onChange={(e) => {
+                setAuthData({ ...authData, firstName: e.target.value });
+              }}
+              type="text"
+              placeholder="First Name"
+            />
+            <input
+              onChange={(e) => {
+                setAuthData({ ...authData, lastName: e.target.value });
+              }}
+              type="text"
+              placeholder="Last Name"
+            />
+            <input
+              onChange={(e) => {
+                setAuthData({ ...authData, email: e.target.value });
+              }}
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              onChange={(e) => {
+                setAuthData({ ...authData, password: e.target.value });
+              }}
+              type="password"
+              placeholder="Password"
+            />
+            <input
+              onChange={(e) => {
+                setAuthData({ ...authData, linkedIn: e.target.value });
+              }}
+              type="text"
+              placeholder="Linked In"
+            />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                axios
+                  .post("http://localhost:8080/api/v1/auth/signup", authData)
+                  .then((res) => {
+                    console.log(res.data);
+                    if (
+                      res.data.msg ==
+                      "User registerd successfully but not verified"
+                    ) {
+                      setAuthCon();
+                      history.push("/verify");
+                    }
+                  });
+              }}
+            >
+              Sign Up
+            </button>
           </form>
         </div>
         <div className="form-container sign-in-container">
-          <form action="#">
+          <form>
             <h1>{active ? "Create Account" : "Sign in"}</h1>
-            <div className="social-container">
-              <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-            <span className="simText">or use your account</span>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
